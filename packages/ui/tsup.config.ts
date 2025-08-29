@@ -12,9 +12,13 @@ export default defineConfig((options: Options) => ({
     options.banner = {
       js: '"use client"',
     };
+    options.keepNames = true;
   },
   dts: true,
   minify: true,
-  external: ["react"],
+  external: ["react", "./styles.css"],
+  treeshake: true,
+  bundle: true,
+  clean: true,
   ...options,
 }));
